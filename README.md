@@ -121,12 +121,12 @@ Things that, if violated, make the code **wrong** — not just suboptimal.
 
 ❌ **Bad** — preferences disguised as requirements:
 ```python
-# {"ai":{"must":["use list comprehension","use snake_case"]}}
+# {"ai":{"goal":"transform list","must":["use list comprehension","use snake_case"]}}
 ```
 
 ✅ **Good** — verifiable constraints:
 ```python
-# {"ai":{"must":["return empty list on null input","preserve order","handle unicode"]}}
+# {"ai":{"goal":"transform list values","must":["return empty list on null input","preserve order","handle unicode"]}}
 ```
 
 Test: *Can I write a test that fails if this is violated?* If no, it belongs in `note`.
@@ -146,7 +146,7 @@ Things that are **tempting but wrong** — the traps an AI (or human) might fall
 Everything else: style preferences, soft limits, references, rationale.
 
 ```python
-# {"ai":{"note":"keep <30 lines; see OWASP password storage cheat sheet"}}
+# {"ai":{"goal":"hash password with bcrypt","must":["cost ≥ 12"],"note":"keep <30 lines; see OWASP password storage cheat sheet"}}
 ```
 
 ---
@@ -254,12 +254,12 @@ DJSC should add information the code doesn't already convey.
 
 ```python
 # BAD — not testable
-# {"ai":{"must":["be fast","handle errors","good code quality"]}}
+# {"ai":{"goal":"process input","must":["be fast","handle errors","good code quality"]}}
 ```
 
 ```python
 # GOOD — verifiable
-# {"ai":{"must":["< 10ms p99","return empty on invalid input","no global state"]}}
+# {"ai":{"goal":"process input","must":["< 10ms p99","return empty on invalid input","no global state"]}}
 ```
 
 ### 🚫 Missing `avoid`
@@ -327,8 +327,8 @@ def authenticate(token: str) -> AuthResult:
 
 ## Quick Reference
 
-```
-# {"ai":{"goal":"<WHAT>","must":["<HARD1>","<HARD2>"],"avoid":["<TRAP1>","<TRAP2>"],"note":"<CONTEXT>"}}
+```json
+{"ai":{"goal":"<WHAT>","must":["<HARD1>","<HARD2>"],"avoid":["<TRAP1>","<TRAP2>"],"note":"<CONTEXT>"}}
 ```
 
 - `goal` — intent, not implementation
