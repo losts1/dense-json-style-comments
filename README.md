@@ -1,4 +1,13 @@
-# Dense JSON-Style Comments — Primer for AI Agents
+# Dense JSON-Style Comments (DJSC)
+
+**A practical standard for giving AI coding agents clear, machine-readable instructions directly in your source code.**
+
+> Replace scattered prose comments with structured JSON that both humans and AI agents can understand.
+
+[![GitHub stars](https://img.shields.io/github/stars/losts1/dense-json-style-comments?style=social)](https://github.com/losts1/dense-json-style-comments/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/losts1/dense-json-style-comments)](https://github.com/losts1/dense-json-style-comments/commits/main)
+
+---
 
 ## What It Is
 
