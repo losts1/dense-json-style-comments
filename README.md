@@ -9,6 +9,16 @@
 
 ---
 
+## Quick Start
+
+Copy and adapt this pattern in your code:
+
+```python
+# {"ai":{"goal":"add JWT auth + rate limit","must":["validate token","use redis","return 401 on fail"],"avoid":["log secrets","use global vars"],"note":"keep function <25 lines"}}
+def authenticate_user(token: str) -> bool:
+    ...
+```
+
 ## What It Is
 
 **Dense JSON-Style Comments (DJSC)** embed structured JSON objects as code comments to convey goal, constraints, anti-patterns, and context in a single dense line. The JSON structure replaces scattered prose with machine-parseable, unambiguous directives.
