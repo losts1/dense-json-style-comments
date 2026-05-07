@@ -105,12 +105,12 @@ The canonical structure uses four top-level keys inside a `"ai"` object:
 
 ❌ **Bad** — describes *how*:
 ```python
-# {"ai":{"goal":"iterate list and filter nulls then map to uppercase"}}
+# {"ai":{"goal":"iterate list and filter nulls then map to uppercase","must":["return new list"]}}
 ```
 
 ✅ **Good** — describes *what*:
 ```python
-# {"ai":{"goal":"return uppercase non-null values from list"}}
+# {"ai":{"goal":"return uppercase non-null values from list","must":["return new list"]}}
 ```
 
 The `goal` is the spec. The AI figures out the implementation.
